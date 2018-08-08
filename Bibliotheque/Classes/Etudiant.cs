@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Bibliotheque.Classes
 {
-    public sealed class Etudiant
+    public sealed class Etudiant : User
     {
+        public string Filiere { get; private set; }
+        
+        public void Noter()
+        {
+
+        }
     }
 }
