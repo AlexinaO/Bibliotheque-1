@@ -21,6 +21,8 @@ namespace Bibliotheque.Classes
             Titre = "tritre manquant";
             Auteurs = new List<Auteur>();
 			Notations = new List<NoteOuvrage>();
+            Recommandations = new List<bool>();
+            Commentaires = new List<string>();
 
 		}
 
@@ -32,9 +34,12 @@ namespace Bibliotheque.Classes
             Titre = titre;
             Auteurs = new List<Auteur>();
 			Notations = new List<NoteOuvrage>();
-		}
+            Recommandations = new List<bool>();
+            Commentaires = new List<string>();
 
-		public int IdOuvrage { get; private set; }
+        }
+
+        public int IdOuvrage { get; private set; }
         public string Filiere { get; private set; }
         public string Categorie { get; private set; }
         public string Discipline { get; private set; }
@@ -43,5 +48,12 @@ namespace Bibliotheque.Classes
         public List<Auteur> Auteurs { get; private set; }
         
 		public List<NoteOuvrage> Notations { get; private set; }
+
+        public List<bool> Recommandations { get; private set; }
+
+        public List<string> Commentaires { get; private set; }
+
+        public User ReservePar { get; set; }
+
     }
 }
