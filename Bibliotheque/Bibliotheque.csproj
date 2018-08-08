@@ -45,6 +45,7 @@
     <Compile Include="Classes\Article.cs" />
     <Compile Include="Classes\Auteur.cs" />
     <Compile Include="Classes\CD.cs" />
+    <Compile Include="Classes\Emprunte.cs" />
     <Compile Include="Classes\Etudiant.cs" />
     <Compile Include="Classes\Livre.cs" />
     <Compile Include="Classes\Ouvrage.cs" />

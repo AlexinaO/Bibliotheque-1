@@ -12,23 +12,50 @@ namespace Bibliotheque.Classes
         public string Nom { get; private set; }
         public string Prenom { get; private set; }
         public string Email { get; private set; }
-		public string MotDePasse { get; private set; }
-		public int NbAvertissement { get; private set; }
+        public string MotDePasse { get; private set; }
+        public int NbAvertissement { get; private set; }
         public bool BlackListed { get; private set; }
 
-        public void Consulter()
+        public List<Ouvrage> Consulter(string recherche, List<Ouvrage> OuvragesDisponibles)
         {
-
+            var requete = from element in OuvragesDisponibles
+                          where element.Titre.Contains(recherche)
+                          select element;
+            return requete.ToList();
+            /*return (from element in OuvragesDisponibles
+                    where element.Titre.Contains(recherche)
+                    select element).ToList();*/
         }
 
-        public void Commenter()
+        public void Commenter(List<Ouvrage> ouvrageACommenter, List<string> commentaires)
         {
-
+            for (var i = 0; i < ouvrageACommenter.Count; i++)
+            {
+                if (!string.IsNullOrWhiteSpace(commentaires.ElementAt(i)))
+                    ouvrageACommenter.ElementAt(i).Commentaires.Add(commentaires.ElementAt(i));
+            }
         }
 
-        public void Reserver()
-        { 
-}
-	}
+        public List<string> Reserver(List<Ouvrage> ouvragesAReserver)
+        {
+            List<string> reponsesReservations = new List<string>();
+
+            for (var i = 0; i < ouvragesAReserver.Count; i++)
+            {
+                string message;
+                if (ouvragesAReserver.ElementAt(i).ReservePar == null)
+                {
+                    ouvragesAReserver.ElementAt(i).ReservePar = this;
+                    message = $"{ouvragesAReserver.ElementAt(i).Titre} est réservé !";
+                }
+                else
+                    message = $"{ouvragesAReserver.ElementAt(i).Titre} est indisponible !";
+
+                reponsesReservations.Add(message);
+            }
+
+            return reponsesReservations;
+        }
+    }
 
 }
