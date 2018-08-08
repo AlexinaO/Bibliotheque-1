@@ -14,5 +14,22 @@ namespace Bibliotheque.Classes
         public string Email { get; set; }
 		public string MotDePasse { get; set; }
 		public int NbAvertissement { get; set; }
+        public bool BlackListed { get; set; }
+
+        public void Consulter()
+        {
+
+        }
+
+        public void Commenter()
+        {
+
+        }
+
+        public void Reserver()
+        {
+
+        }
 	}
+
 }
