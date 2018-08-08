@@ -8,13 +8,13 @@ namespace Bibliotheque.Classes
 {
     public abstract class User
     {
-        public int IdCarte { get; private set; }
-        public string Nom { get; private set; }
-        public string Prenom { get; private set; }
-        public string Email { get; private set; }
-        public string MotDePasse { get; private set; }
-        public int NbAvertissement { get; private set; }
-        public bool BlackListed { get; private set; }
+        public int IdCarte { get;  set; }
+        public string Nom { get;  set; }
+        public string Prenom { get;  set; }
+        public string Email { get;  set; }
+        public string MotDePasse { get;  set; }
+        public int NbAvertissement { get;  set; }
+        public bool BlackListed { get;  set; }
 
         public List<Ouvrage> Consulter(string recherche, List<Ouvrage> OuvragesDisponibles)
         {

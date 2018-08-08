@@ -16,44 +16,20 @@ namespace Bibliotheque.Classes
 
     public abstract class Ouvrage
     {
-        public Ouvrage()
-        {
-            Titre = "tritre manquant";
-            Auteurs = new List<Auteur>();
-			Notations = new List<NoteOuvrage>();
-            Recommandations = new List<bool>();
-            Commentaires = new List<string>();
+        public int IdOuvrage { get; set; }
+        public string Filiere { get; set; }
+        public string Categorie { get; set; }
+        public string Discipline { get; set; }
+        public string Titre { get; set; }
 
-		}
-
-        public Ouvrage(string filiere, string categorie, string discipline, string titre)
-        {
-            Filiere = filiere;
-            Categorie = categorie;
-            Discipline = discipline;
-            Titre = titre;
-            Auteurs = new List<Auteur>();
-			Notations = new List<NoteOuvrage>();
-            Recommandations = new List<bool>();
-            Commentaires = new List<string>();
-
-        }
-
-        public int IdOuvrage { get; private set; }
-        public string Filiere { get; private set; }
-        public string Categorie { get; private set; }
-        public string Discipline { get; private set; }
-        public string Titre { get; private set; }
-
-        public List<Auteur> Auteurs { get; private set; }
+        public List<Auteur> Auteurs { get;  set; }
         
-		public List<NoteOuvrage> Notations { get; private set; }
+		public List<NoteOuvrage> Notations { get;  set; }
 
-        public List<bool> Recommandations { get; private set; }
+        public List<bool> Recommandations { get;  set; }
 
-        public List<string> Commentaires { get; private set; }
+        public List<string> Commentaires { get;  set; }
 
         public User ReservePar { get; set; }
-
     }
 }

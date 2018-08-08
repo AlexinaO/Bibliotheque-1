@@ -8,11 +8,17 @@ namespace Bibliotheque.Classes
 {
     public sealed class Auteur
     {
-        public int ID { get; private set; }
-        public string Nom { get; private set; }
-        public string Prenom { get; private set; }
+		public Auteur(string nom, string prenom)
+		{
+			Nom = nom;
+			Prenom = prenom;
+			Ouvrages = new List<Ouvrage>();
+		}
+        public int ID { get;  set; }
+        public string Nom { get;  set; }
+        public string Prenom { get;  set; }
 
-        public List<Ouvrage> Ouvrages { get; private set; }
+        public List<Ouvrage> Ouvrages { get;  set; }
 
     }
 }

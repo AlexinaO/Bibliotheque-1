@@ -8,8 +8,14 @@ namespace Bibliotheque.Classes
 {
     public sealed class Professeur : User
     {
-        public string Departement { get; private set; }
-        public string Profession { get; private set; }
+		public Professeur(string nom, string prenom)
+		{
+			Nom = nom;
+			Prenom = prenom;
+		}
+
+		public string Departement { get;  set; }
+        public string Profession { get;  set; }
 
         public void Recommander(List<Ouvrage> ouvragesARecommander, bool recommandation)
         {

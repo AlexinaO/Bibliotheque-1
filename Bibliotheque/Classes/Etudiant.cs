@@ -8,11 +8,17 @@ namespace Bibliotheque.Classes
 {
     public sealed class Etudiant : User
     {
-        public string Filiere { get; private set; }
+		public Etudiant(string nom, string prenom)
+		{
+			Nom = nom;
+			Prenom = prenom;
+		}
+
+        public string Filiere { get;  set; }
         
-        public void Noter(List<Ouvrage> ouvragesANoter, NoteOuvrage note)
+        public void Noter(List<Livre> ouvragesANoter, NoteOuvrage note)
         {
-			foreach (Ouvrage ouvrage in ouvragesANoter)
+			foreach (Livre ouvrage in ouvragesANoter)
 				ouvrage.Notations.Add(note);
         }
     }
