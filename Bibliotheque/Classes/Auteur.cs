@@ -12,6 +12,7 @@ namespace Bibliotheque.Classes
         public string Nom { get; private set; }
         public string Prenom { get; private set; }
 
+        public List<Ouvrage> Ouvrages { get; private set; }
 
     }
 }
