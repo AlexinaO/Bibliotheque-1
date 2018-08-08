@@ -11,9 +11,10 @@ namespace Bibliotheque.Classes
         public string Departement { get; private set; }
         public string Profession { get; private set; }
 
-        public void Recommander()
+        public void Recommander(List<Ouvrage> ouvragesARecommander, bool recommandation)
         {
-
+            foreach (Ouvrage ouvrage in ouvragesARecommander)
+                ouvrage.Recommandations.Add(recommandation);
         }
     }
 }
