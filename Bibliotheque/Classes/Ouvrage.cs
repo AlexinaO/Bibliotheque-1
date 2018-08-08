@@ -6,13 +6,23 @@ using System.Threading.Tasks;
 
 namespace Bibliotheque.Classes
 {
+	public enum NoteOuvrage
+	{
+		MAUVAIS = 1,
+		MOYEN,
+		BIEN,
+		EXCELLENT
+	};
+
     public abstract class Ouvrage
     {
         public Ouvrage()
         {
             Titre = "tritre manquant";
             Auteurs = new List<Auteur>();
-        }
+			Notations = new List<NoteOuvrage>();
+
+		}
 
         public Ouvrage(string filiere, string categorie, string discipline, string titre)
         {
@@ -21,9 +31,10 @@ namespace Bibliotheque.Classes
             Discipline = discipline;
             Titre = titre;
             Auteurs = new List<Auteur>();
-        }
+			Notations = new List<NoteOuvrage>();
+		}
 
-        public int IdOuvrage { get; private set; }
+		public int IdOuvrage { get; private set; }
         public string Filiere { get; private set; }
         public string Categorie { get; private set; }
         public string Discipline { get; private set; }
@@ -31,5 +42,6 @@ namespace Bibliotheque.Classes
 
         public List<Auteur> Auteurs { get; private set; }
         
+		public List<NoteOuvrage> Notations { get; private set; }
     }
 }

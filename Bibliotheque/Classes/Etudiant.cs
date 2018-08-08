@@ -10,9 +10,10 @@ namespace Bibliotheque.Classes
     {
         public string Filiere { get; private set; }
         
-        public void Noter()
+        public void Noter(List<Ouvrage> ouvragesANoter, NoteOuvrage note)
         {
-
+			foreach (Ouvrage ouvrage in ouvragesANoter)
+				ouvrage.Notations.Add(note);
         }
     }
 }
