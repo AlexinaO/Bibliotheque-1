@@ -12,6 +12,7 @@ namespace Bibliotheque.Classes
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string Email { get; set; }
+        public int NbAvertissement { get; set; }
 
     }
 }
