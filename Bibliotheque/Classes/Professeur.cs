@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Bibliotheque.Classes
 {
-    public sealed class Professeur
+    public sealed class Professeur : User
     {
+        public string Departement { get; private set; }
+        public string Profession { get; private set; }
+
+        public void Recommander()
+        {
+
+        }
     }
 }
